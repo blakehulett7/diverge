@@ -22,7 +22,7 @@ func main() {
 			fmt.Println(err)
 			return
 		}
-		fmt.Printf("header: %v\n", header)
+		fmt.Printf("filename: %v\n", header.Filename)
 
 		echo, err := os.Create("echo/test.pdf")
 		defer echo.Close()
