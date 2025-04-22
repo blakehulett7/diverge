@@ -31,3 +31,16 @@ hr {
 p {
     color: white;
 }
+
+.cta {
+    width: 40vw;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+    margin: 40px;
+    background-color: white;
+}
+
+.cta:hover {
+    background-color: lightgrey;
+}
