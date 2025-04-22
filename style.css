@@ -32,7 +32,11 @@ p {
     color: white;
 }
 
-.cta {
+.input-container {
+    display: flex;
+}
+
+.upload-button {
     width: 25vw;
     height: 60px;
     border-radius: 50px;
@@ -41,8 +45,10 @@ p {
     background-color: steelblue;
     color: white;
     font-size: 24px;
+    text-align: center;
+    align-content: center;
 }
 
-.cta:hover {
+.upload-button:hover {
     background-color: cornflowerblue;
 }
