@@ -1,8 +1,10 @@
 console.log("Jesus is Lord!")
 
-const uploadForm = document.getElementById("resume-input")
+const resumeInput = document.getElementById("resume-input")
 console.log(uploadForm.files)
 
 uploadForm.addEventListener("change", function() {
-    console.log(uploadForm.submit())
+    console.log("files changed")
+
+    document.forms["upload-form"].submit()
 })

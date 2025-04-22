@@ -14,7 +14,7 @@
         <div class="half">
             <p>Stand out to recruiters with a dedicated website to show that you are the right fit for the job.</p>
             <p>Upload a pdf of your resume and get a professionally designed web resume in seconds.</p>
-            <form class="upload-form">
+            <form id="upload-form" action="http://localhost:8080/v1/upload" method="post" enctype="multipart/form-data">
                 <label class="upload-button" for="resume-input">Upload Your Resume</label>
                 <input hidden type="file" name="resume" id="resume-input" />
             </form>
