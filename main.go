@@ -28,6 +28,8 @@ func main() {
 		defer echo.Close()
 
 		_, err = io.Copy(echo, file)
+
+		http.Redirect(w, r, "/redirect.html", http.StatusSeeOther)
 	})
 
 	server := &http.Server{
