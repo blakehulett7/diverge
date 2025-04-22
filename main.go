@@ -6,8 +6,6 @@ import (
 	"io"
 	"net/http"
 	"os"
-
-	"github.com/ledongthuc/pdf"
 )
 
 func main() {
@@ -28,17 +26,9 @@ func main() {
 		fmt.Printf("filename: %v\n", header.Filename)
 
 		echo, err := os.Create("echo/test.pdf")
+		defer echo.Close()
 
 		_, err = io.Copy(echo, file)
-		echo.Close()
-
-		file, reader, err := pdf.Open("echo/test.pdf")
-		defer file.Close()
-		var buffer bytes.Buffer
-		b, err := reader.GetPlainText()
-
-		buffer.ReadFrom(b)
-		fmt.Println(buffer.String())
 
 		http.Redirect(w, r, "/redirect.html", http.StatusSeeOther)
 	})
