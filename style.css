@@ -38,9 +38,11 @@ p {
     border-radius: 50px;
     border: none;
     margin: 40px;
-    background-color: white;
+    background-color: steelblue;
+    color: white;
+    font-size: 24px;
 }
 
 .cta:hover {
-    background-color: lightgrey;
+    background-color: cornflowerblue;
 }
