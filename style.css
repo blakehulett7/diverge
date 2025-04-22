@@ -17,8 +17,17 @@ body {
     justify-content: center;
 }
 
+h1 {
+    color: white;
+    text-align: center;
+}
+
 hr {
     color: white;
     border-style: solid;
-    width: 50vw;
+    width: 20vw;
+}
+
+p {
+    color: white;
 }
