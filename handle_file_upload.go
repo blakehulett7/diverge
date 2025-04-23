@@ -18,7 +18,7 @@ func handle_file_upload(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Printf("filename: %v\n", header.Filename)
 
-	echo, err := os.Create("echo/test.pdf")
+	echo, err := os.Create(fmt.Sprintf("tmp/%v.pdf", header.Filename))
 	defer echo.Close()
 
 	_, err = io.Copy(echo, file)
