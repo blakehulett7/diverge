@@ -12,7 +12,7 @@ func clean_response(s string) string {
 		if idx == 0 {
 			continue
 		}
-		if idx == 16 {
+		if idx == len(lines)-1 {
 			continue
 		}
 

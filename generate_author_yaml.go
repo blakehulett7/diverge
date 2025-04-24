@@ -40,12 +40,10 @@ func generate_author_yaml(pdf []byte) {
         - All lines contain valid markdown.
 	`))
 
-	fmt.Println(response)
-
 	cleaned := clean_response(response)
-	if cleaned == "err" {
-		fmt.Println("this is where I will try 4 more times")
-	}
 
-	os.WriteFile("output.yaml", []byte(cleaned), 644)
+	err := os.WriteFile("output.yaml", []byte(cleaned), 777)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
