@@ -5,11 +5,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 
 	"google.golang.org/genai"
 )
 
-func prompting(pdf []byte) {
+func get_sections(pdf []byte) []string {
 	ctx := context.Background()
 	client, err := genai.NewClient(ctx, nil)
 	if err != nil {
@@ -41,5 +42,12 @@ func prompting(pdf []byte) {
 	section_list := []string{}
 	json.Unmarshal([]byte(response.Text()), &section_list)
 
-	fmt.Println(section_list)
+	return section_list
+}
+
+	fileBytes, _ := os.ReadFile("sections.json")
+	sections := []string{}
+	json.Unmarshal(fileBytes, &sections)
+
+	fmt.Println(sections)
 }
