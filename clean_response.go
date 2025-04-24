@@ -7,9 +7,9 @@ import (
 
 func clean_response(s string) string {
 	lines := strings.Split(s, "\n")
-	if len(lines) != 15 {
+	if len(lines) != 17 {
 		fmt.Printf("invalid response... not 15 lines, instead %v\n", len(lines))
-		return "error"
+		return "err"
 	}
 
 	cleaned_lines := []string{}
@@ -17,7 +17,7 @@ func clean_response(s string) string {
 		if idx == 0 {
 			continue
 		}
-		if idx == 14 {
+		if idx == 16 {
 			continue
 		}
 

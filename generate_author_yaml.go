@@ -14,6 +14,8 @@ func generate_author_yaml(pdf []byte) {
         # some information about you
         name: "John Doe"
         nickname: "John"
+        # greeting message before your name. it will default to "Hi! I am" if not provided
+        greeting: "Hi, I am"
         # give your some contact information. they will be used in the footer
         contactInfo:
             email: "johndoe@example.com"
@@ -30,10 +32,9 @@ func generate_author_yaml(pdf []byte) {
             - I work on open-source projects
             - I love to work with some fun projects
 
-        Please ensure that no other sections are added to this yaml and that all lines contain valid markdown.
+        Please ensure that no other sections are added to this yaml, that all comments are removed,
+        and that all lines contain valid markdown.
 	`))
-
-	fmt.Println(response)
 
 	cleaned := clean_response(response)
 	if cleaned == "err" {
