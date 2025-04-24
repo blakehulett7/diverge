@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 
 	"google.golang.org/genai"
@@ -36,5 +37,5 @@ func prompting(pdf []byte) {
 		&config,
 	)
 
-	print_gemini_response(response)
+	fmt.Println(response.Text())
 }
