@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 
 	"google.golang.org/genai"
@@ -28,6 +29,9 @@ func ask_gemini(pdf []byte, prompt_text *genai.Part) string {
 		[]*genai.Content{prompt},
 		nil,
 	)
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	return response.Text()
 }

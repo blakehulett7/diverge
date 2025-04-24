@@ -32,9 +32,15 @@ func generate_author_yaml(pdf []byte) {
             - I work on open-source projects
             - I love to work with some fun projects
 
-        Please ensure that no other sections are added to this yaml, that all comments are removed,
-        and that all lines contain valid markdown.
+        Here are some further instructions:
+        - No other sections should be added to this yaml
+        - All comments should be removed
+        - Your response should contain no more than 16 lines
+        - Make sure to include the greeting line with the greeting "Hi, I am"
+        - All lines contain valid markdown.
 	`))
+
+	fmt.Println(response)
 
 	cleaned := clean_response(response)
 	if cleaned == "err" {
