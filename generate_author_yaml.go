@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"google.golang.org/genai"
 )
 
-func generate_author_yaml(pdf []byte) string {
+func generate_author_yaml(pdf []byte) {
 	response := ask_gemini(pdf, genai.NewPartFromText(`
 		Can you please map the uploaded resume to the following yaml format:
 
@@ -35,4 +36,9 @@ func generate_author_yaml(pdf []byte) string {
 	fmt.Println(response)
 
 	cleaned := clean_response(response)
+	if cleaned == "err" {
+		fmt.Println("this is where I will try 4 more times")
+	}
+
+	os.WriteFile("output.yaml", []byte(cleaned), 777)
 }
