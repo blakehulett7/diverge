@@ -39,7 +39,6 @@ func prompting(pdf []byte) {
 	)
 
 	section_list := []string{}
-	fmt.Println(response.Text())
 	json.Unmarshal([]byte(response.Text()), &section_list)
 
 	fmt.Println(section_list)
