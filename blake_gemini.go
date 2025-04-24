@@ -19,14 +19,8 @@ func prompting(pdf []byte) {
 		[]*genai.Part{
 			genai.NewPartFromBytes(pdf, "application/pdf"),
 			genai.NewPartFromText(`
-                I have upload a _ that contains sections. Can you please list the sections in a json readable format? For example,
-                {
-                    sections: [
-                        section1,
-                        section2,
-                        etc...,
-                    ]
-                }
+                I have upload a _ that contains sections. Can you please list the sections in an array?
+                return Array<section>
             `),
 		},
 		"",
