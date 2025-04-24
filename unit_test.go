@@ -7,5 +7,5 @@ import (
 
 func TestGemini(t *testing.T) {
 	pdf, _ := os.ReadFile("tmp/test.pdf")
-	prompting(pdf)
+	compare_sections(pdf)
 }
