@@ -41,5 +41,5 @@ func generate_author_yaml(pdf []byte) {
 		fmt.Println("this is where I will try 4 more times")
 	}
 
-	os.WriteFile("output.yaml", []byte(cleaned), 777)
+	os.WriteFile("output.yaml", []byte(cleaned), 644)
 }
