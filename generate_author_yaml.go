@@ -4,7 +4,7 @@ import "google.golang.org/genai"
 
 func generate_author_yaml(pdf []byte) string {
 	return ask_gemini(pdf, genai.NewPartFromText(`
-		Can you please map the uploaded _ to the following yaml format:
+		Can you please map the uploaded resume to the following yaml format:
 
         # some information about you
         name: "John Doe"
