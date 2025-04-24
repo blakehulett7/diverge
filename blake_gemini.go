@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 
 	"google.golang.org/genai"
@@ -19,19 +18,23 @@ func prompting(pdf []byte) {
 		[]*genai.Part{
 			genai.NewPartFromBytes(pdf, "application/pdf"),
 			genai.NewPartFromText(`
-                I have upload a _ that contains sections. Can you please list the sections in a json array?
+                I have upload a resume that contains sections. Can you please list the sections in a json array?
                 return Array<section>
             `),
 		},
 		"",
 	)
 
-	result, err := client.Models.GenerateContent(
+	config := genai.GenerateContentConfig{
+		ResponseMIMEType: "application/json",
+	}
+
+	response, err := client.Models.GenerateContent(
 		ctx,
 		"gemini-2.0-flash",
 		[]*genai.Content{prompt},
-		nil,
+		&config,
 	)
 
-	fmt.Println(result.Text())
+	print_gemini_response(response)
 }
