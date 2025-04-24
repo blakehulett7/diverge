@@ -44,10 +44,3 @@ func get_sections(pdf []byte) []string {
 
 	return section_list
 }
-
-	fileBytes, _ := os.ReadFile("sections.json")
-	sections := []string{}
-	json.Unmarshal(fileBytes, &sections)
-
-	fmt.Println(sections)
-}
