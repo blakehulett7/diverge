@@ -1,9 +1,13 @@
 package main
 
-import "google.golang.org/genai"
+import (
+	"fmt"
+
+	"google.golang.org/genai"
+)
 
 func generate_author_yaml(pdf []byte) string {
-	return ask_gemini(pdf, genai.NewPartFromText(`
+	response := ask_gemini(pdf, genai.NewPartFromText(`
 		Can you please map the uploaded resume to the following yaml format:
 
         # some information about you
@@ -25,6 +29,10 @@ func generate_author_yaml(pdf []byte) string {
             - I work on open-source projects
             - I love to work with some fun projects
 
-        Please ensure that all lines contain valid markdown.
+        Please ensure that no other sections are added to this yaml and that all lines contain valid markdown.
 	`))
+
+	fmt.Println(response)
+
+	cleaned := clean_response(response)
 }
