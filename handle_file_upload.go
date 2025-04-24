@@ -20,7 +20,6 @@ func handle_file_upload(w http.ResponseWriter, r *http.Request) {
 
 	echo, err := os.Create(fmt.Sprintf("tmp/%v.pdf", header.Filename))
 	defer echo.Close()
-
 	_, err = io.Copy(echo, file)
 
 	http.Redirect(w, r, "/redirect.html", http.StatusSeeOther)

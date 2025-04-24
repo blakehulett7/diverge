@@ -19,7 +19,20 @@ func get_sections(pdf []byte) []string {
 		[]*genai.Part{
 			genai.NewPartFromBytes(pdf, "application/pdf"),
 			genai.NewPartFromText(`
-                I have upload a resume that contains sections. Can you please list the sections in a json array?
+                I have upload a resume that contains sections. The possible sections are as follows:
+                [
+                    "about",
+                    "accomplishments",
+                    "achievements",
+                    "education",
+                    "experiences",
+                    "featured-posts",
+                    "projects",
+                    "publications",
+                    "recent-posts",
+                    "skills"
+                ]
+                Can you please list the sections that are present in the resume in a json array?
                 return Array<section>
             `),
 		},
