@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/fs"
 	"os"
 
 	"google.golang.org/genai"
@@ -42,7 +43,7 @@ func generate_author_yaml(pdf []byte) {
 
 	cleaned := clean_response(response)
 
-	err := os.WriteFile("output.yaml", []byte(cleaned), 777)
+	err := os.WriteFile("output.yaml", []byte(cleaned), fs.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 	}
