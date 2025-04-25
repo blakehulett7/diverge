@@ -20,16 +20,16 @@ func generate_publications_yaml(pdf []byte) {
             weight: 6
             showOnNavbar: true
 
-# filter buttons
+        # filter buttons
         buttons:
-        - name: All
-        filter: "all"
-        - name: "Machine Learning"
-        filter: "machinelearning"
-        - name: "Image Processing"
-        filter: "image-processing"
-        - name: Security
-        filter: "security"
+        -   name: All
+            filter: "all"
+        -   name: "Machine Learning"
+            filter: "machinelearning"
+        -   name: "Image Processing"
+            filter: "image-processing"
+        -   name: Security
+            filter: "security"
 
 # your publications
         publications:
