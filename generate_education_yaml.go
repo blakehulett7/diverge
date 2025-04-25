@@ -76,38 +76,35 @@ func generate_education_yaml(pdf []byte) {
             -   Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
             -   Duis sed massa feugiat, ornare justo et, aliquam est.
             -   Pellentesque ut fringilla magna.
-        customSections: #(optional)
-            - name: Thesis
-            content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            - name: Supervisor
-            content: Fusce eu augue ut odio porttitor pulvinar.
-        - name: Higher Secondary School Certificate
-        icon: fa-university
-        timeframe: 2010-2012
-        institution:
-            name: MST College of Science
-            url: "#"
-            logo: /images/sections/education/science_college.png
-            # Can optionally show a different logo for dark theme
-            # darkLogo: /images/sections/education/science_college.png
-        grade: #(optional)
-            scale: GPA
-            achieved: 5
-            outOf: 5
-        extracurricularActivities: #(optional)
-        - In vitae facilisis est, eget porta sem.
-        - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
-        - Duis sed massa feugiat, ornare justo et, aliquam est.
-        - Pellentesque ut fringilla magna.
-        - name: Secondary School Certificate
-        icon: fa-school
-        timeframe: 2005-2010
-        institution:
-            name: JK School of Science
-        grade: #(optional)
-            scale: GPA
-            achieved: 4.5
-            outOf: 5
+            customSections: #(optional)
+            -   name: Thesis
+                content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            -   name: Supervisor
+                content: Fusce eu augue ut odio porttitor pulvinar.
+        -   name: Higher Secondary School Certificate
+            icon: fa-university
+            timeframe: 2010-2012
+            institution:
+                name: MST College of Science
+                url: "#"
+            grade: #(optional)
+                scale: GPA
+                achieved: 5
+                outOf: 5
+            extracurricularActivities: #(optional)
+            -   In vitae facilisis est, eget porta sem.
+            -   Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
+            -   Duis sed massa feugiat, ornare justo et, aliquam est.
+            -   Pellentesque ut fringilla magna.
+        -   name: Secondary School Certificate
+            icon: fa-school
+            timeframe: 2005-2010
+            institution:
+                name: JK School of Science
+            grade: #(optional)
+                scale: GPA
+                achieved: 4.5
+                outOf: 5
 
         Here are some further instructions:
         - No other sections should be added to this yaml
