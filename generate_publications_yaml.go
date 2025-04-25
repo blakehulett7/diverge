@@ -31,47 +31,47 @@ func generate_publications_yaml(pdf []byte) {
         -   name: Security
             filter: "security"
 
-# your publications
+        # your publications
         publications:
-        - title: An Example Paper on Machine Learning
-        publishedIn:
-            name: 2020 IEEE Region Symposium (TENSYMP)
-            date: 7 June 2020
-            url: https://example.com
-        authors:
-        - name: Dr. Madman
-            url: https://example.com
-        - name: Dr. Lessmad
-            url: https://example.com
-        - name: Dr. Moremad
-            url: https://example.com
-        - name: Dr. Goodman
-            url: https://example.com
-        paper:
-            summary: Voluptate in id id voluptate laboris. Minim mollit aliquip sit aliqua ut exercitation voluptate eiusmod consequat pariatur sunt enim veniam. Velit esse tempor laboris anim tempor officia. Magna non labore duis do esse sit do ipsum culpa. Officia consequat id non duis culpa dolor. Excepteur magna non nostrud cupidatat aute aliqua aliquip.
-            url: https://example.com
-        categories: ["machinelearning","image-processing"]
-        tags: ["Machine Learning", "Autonomous Driving", "Computer Vision"]
+        -   title: An Example Paper on Machine Learning
+            publishedIn:
+                name: 2020 IEEE Region Symposium (TENSYMP)
+                date: 7 June 2020
+                url: https://example.com
+            authors:
+            -   name: Dr. Madman
+                url: https://example.com
+            -   name: Dr. Lessmad
+                url: https://example.com
+            -   name: Dr. Moremad
+                url: https://example.com
+            -   name: Dr. Goodman
+                url: https://example.com
+			paper:
+				summary: Voluptate in id id voluptate laboris. Minim mollit aliquip sit aliqua ut exercitation voluptate eiusmod consequat pariatur sunt enim veniam. Velit esse tempor laboris anim tempor officia. Magna non labore duis do esse sit do ipsum culpa. Officia consequat id non duis culpa dolor. Excepteur magna non nostrud cupidatat aute aliqua aliquip.
+				url: https://example.com
+			categories: ["machinelearning","image-processing"]
+			tags: ["Machine Learning", "Autonomous Driving", "Computer Vision"]
 
-        - title: An Sample Paper on Image Processing
-        publishedIn:
-            name: 2020 IEEE Region Symposium (TENSYMP)
-            date: 7 June 2020
-            url: https://example.com
-        authors:
-        - name: Dr. Madman
-            url: https://example.com
-        - name: Dr. Lessmad
-            url: https://example.com
-        - name: Dr. Moremad
-            url: https://example.com
-        - name: Dr. Goodman
-            url: https://example.com
-        paper:
-            summary: Ullamco magna minim cupidatat Lorem ea ex aliqua fugiat et. Dolor quis cillum ea duis irure et commodo aliquip consectetur ullamco labore ut anim nisi. Commodo reprehenderit est consectetur tempor adipisicing occaecat exercitation amet do aliquip dolor do irure. Labore officia ut magna pariatur reprehenderit et ex sit sunt. Magna proident ullamco adipisicing sit.
-            url: https://example.com
-        categories: ["image-processing"]
-        tags: ["Image Processing", "Computer Vision"]
+        -   title: An Sample Paper on Image Processing
+			publishedIn:
+				name: 2020 IEEE Region Symposium (TENSYMP)
+				date: 7 June 2020
+				url: https://example.com
+        	authors:
+			-   name: Dr. Madman
+				url: https://example.com
+			-   name: Dr. Lessmad
+				url: https://example.com
+			-   name: Dr. Moremad
+				url: https://example.com
+			-   name: Dr. Goodman
+				url: https://example.com
+			paper:
+				summary: Ullamco magna minim cupidatat Lorem ea ex aliqua fugiat et. Dolor quis cillum ea duis irure et commodo aliquip consectetur ullamco labore ut anim nisi. Commodo reprehenderit est consectetur tempor adipisicing occaecat exercitation amet do aliquip dolor do irure. Labore officia ut magna pariatur reprehenderit et ex sit sunt. Magna proident ullamco adipisicing sit.
+				url: https://example.com
+			categories: ["image-processing"]
+			tags: ["Image Processing", "Computer Vision"]
 
         - title: An Example Paper on Security
         publishedIn:
