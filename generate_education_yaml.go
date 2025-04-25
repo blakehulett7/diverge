@@ -109,7 +109,6 @@ func generate_education_yaml(pdf []byte) {
         Here are some further instructions:
         - No other sections should be added to this yaml
         - For any icons, only font awesome icons should be used
-        - Your response should contain no more than 80 lines
         - All lines should contain valid markdown.
 	`))
 

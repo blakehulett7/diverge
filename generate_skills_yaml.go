@@ -93,7 +93,6 @@ func generate_skills_yaml(pdf []byte) {
             6. kubernetes.png
             7. linux.png
             8. prometheus.png
-        - Your response should contain no more than 75 lines
         - All lines should contain valid markdown.
 	`))
 

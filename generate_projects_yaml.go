@@ -78,7 +78,6 @@ func generate_projects_yaml(pdf []byte) {
 
         Here are some further instructions:
         - No other sections should be added to this yaml
-        - Your response should contain no more than 75 lines
         - All lines should contain valid markdown.
 	`))
 
