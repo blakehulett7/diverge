@@ -7,5 +7,5 @@ import (
 
 func TestGemini(t *testing.T) {
 	pdf, _ := os.ReadFile("tmp/test.pdf")
-	generate_publications_yaml(pdf)
+	parse_r(pdf)
 }
