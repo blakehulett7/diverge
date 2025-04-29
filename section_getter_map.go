@@ -4,6 +4,7 @@ var section_getter_map = map[string]func([]byte){
 	"about":           generate_about_yaml,
 	"accomplishments": nil,
 	"achievements":    nil,
+	"author":          generate_author_yaml,
 	"education":       generate_education_yaml,
 	"experiences":     generate_experiences_yaml,
 	"featured-posts":  nil,
