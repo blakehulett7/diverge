@@ -6,7 +6,7 @@ func parse_r(pdf []byte) {
 	sections := get_sections(pdf)
 
 	for _, section := range sections {
-		fmt.Printf("generating %v yaml...", section)
+		fmt.Printf("generating %v yaml...\n", section)
 		generator := section_getter_map[section]
 		generator(pdf)
 	}

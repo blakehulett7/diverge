@@ -33,6 +33,8 @@ func get_sections(pdf []byte) []string {
                     "skills"
                 ]
                 Can you please list the sections that are present in the resume in a json array?
+				Only use terms that are on the possible sections list.
+
                 return Array<section>
             `),
 		},

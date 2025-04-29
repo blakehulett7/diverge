@@ -83,7 +83,7 @@ func generate_projects_yaml(pdf []byte) {
 
 	cleaned := clean_response(response)
 
-	err := os.WriteFile("projects.yaml", []byte(cleaned), fs.ModePerm)
+	err := os.WriteFile("tmp/projects.yaml", []byte(cleaned), fs.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 	}

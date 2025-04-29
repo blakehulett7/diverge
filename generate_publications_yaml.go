@@ -101,7 +101,7 @@ func generate_publications_yaml(pdf []byte) {
 
 	cleaned := clean_response(response)
 
-	err := os.WriteFile("publications.yaml", []byte(cleaned), fs.ModePerm)
+	err := os.WriteFile("tmp/publications.yaml", []byte(cleaned), fs.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 	}

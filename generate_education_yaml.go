@@ -114,7 +114,7 @@ func generate_education_yaml(pdf []byte) {
 
 	cleaned := clean_response(response)
 
-	err := os.WriteFile("education.yaml", []byte(cleaned), fs.ModePerm)
+	err := os.WriteFile("tmp/education.yaml", []byte(cleaned), fs.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 	}

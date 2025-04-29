@@ -43,7 +43,7 @@ func generate_author_yaml(pdf []byte) {
 
 	cleaned := clean_response(response)
 
-	err := os.WriteFile("author.yaml", []byte(cleaned), fs.ModePerm)
+	err := os.WriteFile("tmp/author.yaml", []byte(cleaned), fs.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 	}
