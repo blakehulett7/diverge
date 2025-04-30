@@ -4,7 +4,7 @@ import "fmt"
 
 func parse_r(pdf []byte) {
 	sections := get_sections(pdf)
-	sections = append(sections, []string{"about, author"}...)
+	sections = append(sections, []string{"about", "author"}...)
 
 	for _, section := range sections {
 		fmt.Printf("generating %v yaml...\n", section)
