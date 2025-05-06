@@ -27,7 +27,6 @@ func create_site(pdf []byte) {
 	dir, _ := os.Getwd()
 	fmt.Println(dir)
 
-	cmd := exec.Command("ls")
-	cmd.Stdout = os.Stdout
+	cmd := exec.Command("hugo", "mod", "tidy")
 	cmd.Run()
 }
