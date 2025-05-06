@@ -8,7 +8,7 @@ import (
 	"google.golang.org/genai"
 )
 
-func generate_projects_yaml(pdf []byte) {
+func generate_projects_yaml(pdf []byte, site_path string) {
 	response := ask_gemini(pdf, genai.NewPartFromText(`
 		Can you please map the projects section of the uploaded resume to the following yaml format:
 
@@ -85,7 +85,8 @@ func generate_projects_yaml(pdf []byte) {
 	cleaned := clean_response(response)
 	fmt.Println(cleaned)
 
-	err := os.WriteFile("tmp/projects.yaml", []byte(cleaned), fs.ModePerm)
+	file_path := fmt.Sprintf("%v/data/en/sections/projects.yaml", site_path)
+	err := os.WriteFile(file_path, []byte(cleaned), fs.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 	}

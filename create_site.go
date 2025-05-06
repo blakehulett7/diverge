@@ -11,7 +11,7 @@ import (
 
 const directoryPerms = fs.FileMode(0755)
 
-func create_site() {
+func create_site(pdf []byte) {
 	site_id := uuid.NewString()
 	site_path := fmt.Sprintf("./sites/%v", site_id)
 	os.Mkdir(site_path, directoryPerms)
@@ -20,4 +20,6 @@ func create_site() {
 		URL:      "https://github.com/blakehulett7/site_template",
 		Progress: os.Stdout,
 	})
+
+	parse_r(pdf, site_path)
 }
