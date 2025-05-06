@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"os/exec"
 
 	"github.com/go-git/go-git/v5"
 	"github.com/google/uuid"
@@ -22,4 +23,11 @@ func create_site(pdf []byte) {
 	})
 
 	parse_r(pdf, site_path)
+	os.Chdir(site_path)
+	dir, _ := os.Getwd()
+	fmt.Println(dir)
+
+	cmd := exec.Command("ls")
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 }

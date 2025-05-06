@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestParser(t *testing.T) {
+func TestSiteGenerator(t *testing.T) {
 	pdf, _ := os.ReadFile("tmp/test.pdf")
 	create_site(pdf)
 }
