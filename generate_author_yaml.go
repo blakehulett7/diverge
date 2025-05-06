@@ -17,6 +17,7 @@ func generate_author_yaml(pdf []byte, site_path string) {
         nickname: "John"
         # greeting message before your name. it will default to "Hi! I am" if not provided
         greeting: "Hi, I am"
+        image: "images/author/john.png"
         # give your some contact information. they will be used in the footer
         contactInfo:
             email: "johndoe@example.com"
@@ -35,9 +36,9 @@ func generate_author_yaml(pdf []byte, site_path string) {
 
         Here are some further instructions:
         - No other sections should be added to this yaml
-        - All comments should be removed
-        - Your response should contain no more than 16 lines
+        - The image line should not change. It should remain as follows, image: "images/author/john.png"
         - Make sure to include the greeting line with the greeting "Hi, I am"
+        - Each summary line should be in a brief statement that begins with I...
         - All lines contain valid markdown.
 	`))
 
