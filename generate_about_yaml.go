@@ -8,7 +8,7 @@ import (
 	"google.golang.org/genai"
 )
 
-func generate_about_yaml(pdf []byte) {
+func generate_about_yaml(pdf []byte, site_path string) {
 	response := ask_gemini(pdf, genai.NewPartFromText(`
 		Can you please map the uploaded resume to the following yaml format:
 
@@ -94,7 +94,8 @@ func generate_about_yaml(pdf []byte) {
 
 	cleaned := clean_response(response)
 
-	err := os.WriteFile("tmp/about.yaml", []byte(cleaned), fs.ModePerm)
+	file_path := fmt.Sprintf("%v/data/en/sections/about.yaml", site_path)
+	err := os.WriteFile(file_path, []byte(cleaned), fs.ModePerm)
 	if err != nil {
 		fmt.Println(err)
 	}

@@ -1,6 +1,6 @@
 package main
 
-var section_getter_map = map[string]func([]byte){
+var section_getter_map = map[string]func([]byte, string){
 	"about":           generate_about_yaml,
 	"accomplishments": generate_accomplishments_yaml,
 	"achievements":    generate_achievements_yaml,
