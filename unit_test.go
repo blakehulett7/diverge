@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestGemini(t *testing.T) {
+func TestParser(t *testing.T) {
 	pdf, _ := os.ReadFile("tmp/test.pdf")
 	parse_r(pdf)
 }
