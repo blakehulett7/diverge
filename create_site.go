@@ -29,4 +29,9 @@ func create_site(pdf []byte) {
 
 	cmd := exec.Command("hugo", "mod", "tidy")
 	cmd.Run()
+	cmd = exec.Command("hugo", "mod", "npm", "pack")
+	cmd.Run()
+	cmd = exec.Command("npm", "install")
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 }
