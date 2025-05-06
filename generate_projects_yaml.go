@@ -81,9 +81,7 @@ func generate_projects_yaml(pdf []byte, site_path string) {
         - All lines should contain valid markdown.
 	`))
 
-	fmt.Println(response)
 	cleaned := clean_response(response)
-	fmt.Println(cleaned)
 
 	file_path := fmt.Sprintf("%v/data/en/sections/projects.yaml", site_path)
 	err := os.WriteFile(file_path, []byte(cleaned), fs.ModePerm)
