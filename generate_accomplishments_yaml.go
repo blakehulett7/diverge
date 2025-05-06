@@ -1,0 +1,70 @@
+package main
+
+import (
+	"fmt"
+	"io/fs"
+	"os"
+
+	"google.golang.org/genai"
+)
+
+func generate_accomplishments_yaml(pdf []byte) {
+	response := ask_gemini(pdf, genai.NewPartFromText(`
+		Can you please map the accomplishments section of the uploaded resume to the following yaml format:
+
+        # section information
+        section:
+            name: Accomplishments
+            id: accomplishments
+            enable: true
+            weight: 9
+            showOnNavbar: true
+
+
+        # Your accomplishments
+        accomplishments:
+        -   name: Linux Foundation System Administrator
+            timeline: "March 2018 - March 2019"
+            organization:
+                name: Linux Foundation
+                url: https://www.linuxfoundation.org
+            courseOverview: This course helps to understand the key concepts such as networking, storage, security, maintenance, logging and monitoring, application lifecycle, troubleshooting, API object primitives etc. It also help to grow the ability to establish basic use-cases for end users.
+            certificateURL: "https://example.com"
+
+        -   name: Machine Learning
+            timeline: "Jun 2020 - Jan 2021"
+            organization:
+                name: Coursera
+                url: https://www.coursera.org
+            courseOverview: "This course provides a broad introduction to machine learning, datamining, and statistical pattern recognition. Topics include: (i) Supervised learning (parametric/non-parametric algorithms, support vector machines, kernels, neural networks). (ii) Unsupervised learning (clustering, dimensionality reduction, recommender systems, deep learning). (iii) Best practices in machine learning (bias/variance theory; innovation process in machine learning and AI)."
+            certificateURL: "https://example.com"
+
+        -   name: Grokking the System Design Interview
+            timeline: "Jan 2018 - Sept 2018"
+            organization:
+                name: educative
+                url: https://www.educative.io
+            courseOverview: This course is a complete guide to master the SDIs. It is created by hiring managers who’ve been working at Google, Facebook, Microsoft, and Amazon. We've carefully chosen a set of questions that have not only been repeatedly asked at top companies, but also provide a thorough experience to handle any system design problem.
+            certificateURL: "https://example.com"
+
+        -   name: Mastering Multithreading Programming with Go (Golang)
+            timeline: "Nov 2017 - Mar 2018"
+            organization:
+                name: Udemy
+                url: https://www.udemy.com
+            courseOverview: Discover how to create responsive and high performance software. Develop programs with Golang that are highly Concurrent and Parallel. Improve your programming skills in Go with more advanced, multithreading topics.
+            certificateURL: "https://example.com"
+        
+        Here are some further instructions:
+        - No other sections should be added to this yaml
+        - For any icons, only font awesome icons should be used
+        - All lines should contain valid markdown.
+	`))
+
+	cleaned := clean_response(response)
+
+	err := os.WriteFile("tmp/accomplishments.yaml", []byte(cleaned), fs.ModePerm)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
