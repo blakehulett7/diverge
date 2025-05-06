@@ -24,8 +24,6 @@ func create_site(pdf []byte) {
 
 	parse_r(pdf, site_path)
 	os.Chdir(site_path)
-	dir, _ := os.Getwd()
-	fmt.Println(dir)
 
 	cmd := exec.Command("hugo", "mod", "tidy")
 	cmd.Run()
